@@ -1,0 +1,47 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input{
+    display: block;
+    font-family: 'Source Code Pro';
+    font-size: 1.5rem;
+
+    &::selection {
+        color: rgb(224, 220, 224);
+        background: rgb(66, 66, 66);
+    }
+}
+
+#generate {
+    background-color: rgb(63, 160, 115);
+    color: white;
+    border-radius: 10%;
+    border-style: solid;
+    outline: none;
+    padding: 5px;
+    border: none;
+
+    &:hover {
+        background-color: black;
+    }
+
+    
+}
+button{
+    display: block;
+    font-family: 'oswald';
+    font-size: 1.3rem;
+    margin-top: 8px;
+}
+
+::placeholder { /* Firefox, Chrome, Opera */ 
+    font-size: 1.25rem;
+    color: #919090; 
+    font-family: 'Kumbh Sans', sans-serif;
+
+} 
+

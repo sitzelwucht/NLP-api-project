@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Poiret+One&family=Source+Code+Pro&family=Tajawal:wght@300&display=swap');
+
+body{
+    font-size: 24pt;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+div {
+    padding: 30px;
+}
+
+main {
+    display: grid;
+    grid-auto-rows: minmax(150px, auto);
+    grid-template-columns: 50% 50%;
+    height:80vh;
+    width: 50vw;
+    margin:auto;
+    color: #111213;
+    justify-content: center;
+    grid-gap: 1em;
+    font-size: 20px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+#response{
+    border: grey solid 1px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.response-field {
+    font-weight: bolder;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    color: rgb(31, 31, 117)
+}
+#error {
+    color: rgb(168, 57, 57);
+    height: 40px;
+}
+
+
+
+
+
