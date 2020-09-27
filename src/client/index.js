@@ -17,8 +17,6 @@ document.getElementById('generate').addEventListener('click', (e) => {
     e.preventDefault();
     getData();
     inputTest.innerHTML = validateInput();
-    Client.getAPIKey().then(key =>
-        apiTest.innerHTML = key)
     
 });
 
