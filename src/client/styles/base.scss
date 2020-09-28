@@ -83,20 +83,18 @@ body {
     margin: 20px;
     text-transform: lowercase;
     text-align: center;
+    
 }
 
   .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 2px dotted $base-green;
-  
-      &:hover {
-        visibility: visible;
+
       }
 
-  }
 
-  .tooltiptext {
+  .tooltiptext .tooltiptext {
     visibility: hidden;
     width: 350px;
     background-color: rgba(40, 40, 40, .7);
@@ -108,7 +106,11 @@ body {
     z-index: 1;
     top: -5px;
     left: 105%;
-    }
+  }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
 
 .loader {
     width : 70px;
