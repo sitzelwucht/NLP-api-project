@@ -85,32 +85,30 @@ body {
     text-align: center;
 }
 
-
   .tooltip {
     position: relative;
     display: inline-block;
     border-bottom: 2px dotted $base-green;
-  }
   
-  .tooltip .tooltiptext {
+      &:hover {
+        visibility: visible;
+      }
+
+  }
+
+  .tooltiptext {
     visibility: hidden;
     width: 350px;
-    background-color: rgba(40, 40, 40, .6);
+    background-color: rgba(40, 40, 40, .7);
     color: #fff;
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-   
     position: absolute;
     z-index: 1;
     top: -5px;
     left: 105%;
     }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-
 
 .loader {
     width : 70px;
