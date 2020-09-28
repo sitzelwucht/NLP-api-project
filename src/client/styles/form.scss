@@ -1,3 +1,9 @@
+$base-green: rgb(63, 160, 115);
+$light-grey-translucent:  rgba(170, 170, 170, 0.4);
+$dark-grey-translucent:  rgba(70, 70, 70, 0.4);
+$dark:  rgb(70, 70, 70);
+$main-font: 'Tajawal';
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -5,43 +11,77 @@ button:focus {
     outline: none;
 }
 
-input{
-    display: block;
-    font-family: 'Source Code Pro';
-    font-size: 1.5rem;
+.form {
+    margin: 1.15rem;
 
-    &::selection {
-        color: rgb(224, 220, 224);
-        background: rgb(66, 66, 66);
-    }
 }
 
 #generate {
-    background-color: rgb(63, 160, 115);
-    color: white;
-    border-radius: 10%;
-    border-style: solid;
-    outline: none;
-    padding: 5px;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
     border: none;
+    outline: none;
+    color: #fff;
+    background-color: $base-green;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 
-    &:hover {
-        background-color: black;
-    }
-
+        &:hover {
+            background-color: black;
+        }
     
 }
-button{
+
+#url-input {
     display: block;
-    font-family: 'oswald';
-    font-size: 1.3rem;
-    margin-top: 8px;
+    font-family: 'Source Code Pro';
+    outline: none;
+    min-width: 150px;
+    width: 33.33333%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    padding-right: 1rem;
+    border: 1px solid $dark-grey-translucent;
+    font-size: 1rem;
+    transition: width 300ms ease-in-out;
+        
+        &:focus {
+            width: 100%;
+        }
+
+        &::placeholder { 
+            color: #919090;
+            font-size: 0.8rem;
+        } 
+    
+        &::selection {
+            color: rgb(224, 220, 224);
+            background: rgb(66, 66, 66);
+        }
+
 }
 
-::placeholder { /* Firefox, Chrome, Opera */ 
-    font-size: 1.25rem;
-    color: #919090; 
-    font-family: 'Kumbh Sans', sans-serif;
+.select {
+    font-family: $main-font;
+    width: 120px;
+    height: 35px;
+    border: 1px solid $dark-grey-translucent;
+    font-size: 18px;
+    background-color: white;
+    color: $dark;
+    display: block;
 
-} 
+    &:active {
+        outline-color: $base-green!important;
+      }
 
+    &:hover {
+        outline-color: $base-green!important;
+    }
+  }

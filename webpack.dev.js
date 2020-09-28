@@ -3,19 +3,36 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
 module.exports = {
     mode: 'development',
     entry: './src/client/index.js',
-    module: {
+    devtool: 'source-map',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client',
+    },
+    devServer: {
+        historyApiFallback: true,
+        inline: true,
+        contentBase: __dirname + '/dist',
+        proxy: {
+              "/api": {
+                target: "http://localhost:8000"
+              }
+            }
+        
+      },
+      module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "babel-loader"
+                loader: "babel-loader",
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: [ 'style-loader', 'css-loader', 'sass-loader' ],
             }
         ]
     },
@@ -23,7 +40,7 @@ module.exports = {
         new HtmlWebpackPlugin(
             {
             template: './src/client/views/index.html',
-            filename: './index.html'
+            filename: './index.html',
             }
         ),
         new CleanWebpackPlugin(
@@ -31,7 +48,7 @@ module.exports = {
             dry: true,
             verbose: true,
             cleanStaleWebpackAssets: true,
-            protectWebpackAssets: false
+            protectWebpackAssets: false,
             }
         )
     ]

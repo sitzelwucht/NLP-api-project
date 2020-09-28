@@ -1,46 +1,139 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&family=Poiret+One&family=Source+Code+Pro&family=Tajawal:wght@300&display=swap');
 
-body{
-    font-size: 24pt;
-    font-family: 'Kumbh Sans', sans-serif;
+
+$grey-lighter: rgb(218, 218, 218);
+$grey-light: rgb(172, 172, 172);
+$grey-dark: rgb(110, 110, 110);
+$grey-darker: rgb(59, 59, 59);
+$light-grey-translucent:  rgba(170, 170, 170, 0.4);
+$dark-grey-translucent:  rgba(70, 70, 70, 0.4);
+$main-font: 'Tajawal';
+$secondary-font: 'Kumbh Sans';
+$base-green: rgb(63, 160, 115);
+
+body {
+    font-size: 20pt;
+    font-family: $main-font;
+
+    a {
+        text-decoration: none;
+        color: rgb(63, 134, 63);
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    div {
+        padding: 10px;
+    }
+
+    span {
+        padding: 20px;
+        font-weight: 400;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 50vw;
+        margin:auto;
+        color: #111213;
+        justify-content: center;
+        grid-gap: 1em;
+        font-size: 20px;
+        font-family: $main-font;
+    }
 }
 
-div {
-    padding: 30px;
+
+#div-left {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    padding: 1.25rem;
+    background: linear-gradient(270deg,#fff, rgb(240, 240, 240));
+    box-sizing: border-box;
 }
 
-main {
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    grid-template-columns: 50% 50%;
-    height:80vh;
-    width: 50vw;
-    margin:auto;
-    color: #111213;
-    justify-content: center;
-    grid-gap: 1em;
-    font-size: 20px;
-    font-family: 'Tajawal', sans-serif;
+
+#div-right {
+    height: 70vh;
+    box-sizing: border-box;
+    border-left: $dark-grey-translucent solid 1px;
+
 }
 
-#response{
-    border: grey solid 1px;
-    margin-top: 5px;
-    padding: 5px;
+#error {
+    color: rgb(180, 66, 66);
+    font-style: italic;
+    margin-bottom: 8px;
+
 }
 
 .response-field {
     font-weight: bolder;
+    font-family: $secondary-font;
     font-size: 1.3em;
     letter-spacing: 1px;
-    color: rgb(31, 31, 117)
+    background-color: rgb(212, 211, 209);
+    color: rgb(63, 160, 115);
+    border-bottom: lightgrey solid 1px;
+    padding: 20px;
+    margin: 20px;
+    text-transform: lowercase;
+    text-align: center;
 }
-#error {
-    color: rgb(168, 57, 57);
-    height: 40px;
+
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px dotted $base-green;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 350px;
+    background-color: rgba(40, 40, 40, .6);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+    }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+
+.loader {
+    width : 70px;
+    height: 70px;
+    border: 16px solid white;
+    border-top: 16px solid $grey-lighter;
+    border-right: 16px solid $grey-light;
+    border-bottom: 16px solid $grey-dark;
+    border-left: 16px solid $grey-darker;
+    border-radius: 50%;
+    display: none;
+    margin: 2.75rem;
+    padding: 15px;
+  }
+  
+  .spin {
+    animation: spinner 1.5s linear infinite;
+    display: block;
+  }
+
+
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+
 }
-
-
-
-
-

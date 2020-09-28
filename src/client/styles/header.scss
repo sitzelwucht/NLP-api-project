@@ -1,10 +1,17 @@
-h1{
-    font-family: 'Poiret One', sans-serif;
-    color: rgb(210, 213, 214);
+h1 {
+    font-size: 3.5rem;
+    color: rgb(224, 226, 226);
+}
+
+h3 {
+    font-size: 2.5rem;
+    padding-left: 100px;
 }
 
 .header {
-    font-size: 3rem;
-    background-color: rgba(31, 27, 26, 0.4);
-    height: 150px;
+    font-family: 'Poiret One', sans-serif;
+    background: linear-gradient(175deg, #2ea564, #bde0ce);
+    height: 25vh;
+    padding-left: 20%;
+    
 }

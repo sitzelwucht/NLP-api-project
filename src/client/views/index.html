@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Text Evaluation</title>
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -11,41 +10,83 @@
 
    <header>
     <div class ="header">
-      <h1>Evaluate News Article with Natural Language Processing</h1>
+      <h1>Text Sentiment Analysis</h1>
+      <h3>with Natural Language Processing</h3>
     </div>
-
    </header>
 
   <main>
-    <div id="div1">
-      <form>
-        <div id="form">
-          <label for="evaluate">Please enter URL:</label>
-          <input type="text" id="url-input" name="evaluate" placeholder="http(s)://">
-        </div>
-        <div id="input-test"></div>
-        <div id="button">
-          <input type="submit" name="evaluate" id="generate" value="send">
-          </div>
+    
+    <div id="div-left">
+      
+        <form>
+        
+            <label for="url-input">Please enter URL:</label>
+            <input type="text" name="evaluate" id="url-input" class="form" placeholder="http://">
+            <div id="error"></div>
+
+            <label for="language-input">Text Language:</label>
+            <select name="evaluate" id="language-input" class="select form">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="it">Italian</option>
+              <option value="pt">Portuguese</option>
+            </select>
+        
+            <div id="button">
+              <input type="submit" name="evaluate" id="generate" class="form" value="send">
+            </div>
+        
         </form>
-          <div id="error"></div>
+      
+      <div class="loader"></div>
     </div>
     
-  <div id="div2">
-    <div id="response">
-      Agreement: <div class="response-field" id="agreement"></div>
-      Subjectivity: <div class="response-field" id="subjectivity"></div>
-      Confidence: <div class="response-field" id="confidence"></div>
-      Irony: <div class="response-field" id="irony"></div>
+    <div id="div-right">
+
+      <div class="tooltip">Agreement: <span class="tooltiptext">Marks the agreement between the sentiments detected in the text, 
+        the sentence or the segment it refers to. It has two possible values:
+        AGREEMENT: the different elements have the same polarity.
+        DISAGREEMENT: there is disagreement between the different elements' polarity.</span></div> 
+      <div class="response-field" id="agreement"></div>
+
+
+      <div class="tooltip">Subjectivity: <span class="tooltiptext">	
+        Marks the subjectivity of the text. It has two possible values:
+        OBJECTIVE: the text does not have any subjectivity marks.
+        SUBJECTIVE: the text has subjective marks.</span></div> 
+      <div class="response-field" id="subjectivity"></div>
+
+
+      <div class="tooltip">Confidence: <span class="tooltiptext">	
+        Represents the confidence associated with the sentiment analysis performed on the text. 
+        Its value is an integer number in the 0-100 range.</span></div> 
+      <div class="response-field" id="confidence"></div>
+
+
+      <div class="tooltip">Irony: <span class="tooltiptext">	
+        Indicates the irony of the text. It has two possible values:
+        NONIRONIC: the text does not have ironic marks
+        IRONIC: the text has ironic marks.</span></div> 
+      <div class="response-field" id="irony"></div>
 
     </div>
-  </div>
-
-</main>
+  
+  </main>
 
    <footer>
-
+    powered by <a href="https://meaningcloud.com" target="_blank">MeaningCloud</a>
+   
    </footer>
 
+   <script>
+    
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+        });
+    }
+   </script>
 </body>
 </html>
